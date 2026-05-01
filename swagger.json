@@ -1,0 +1,100 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API Shows",
+    "version": "1.0.0",
+    "description": "API de series"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3333"
+    }
+  ],
+  "paths": {
+    "/api/shows": {
+      "get": {
+        "summary": "Obtener todas las series",
+        "responses": {
+          "200": {
+            "description": "Lista de series"
+          }
+        }
+      },
+      "post": {
+        "summary": "Crear una serie",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string" },
+                  "description": { "type": "string" },
+                  "link": { "type": "string" },
+                  "img": { "type": "string" },
+                  "genre": { "type": "string" },
+                  "seasons": { "type": "number" },
+                  "section": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Serie creada"
+          }
+        }
+      }
+    },
+
+    "/api/shows/{id}": {
+      "get": {
+        "summary": "Obtener serie por ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Serie encontrada" },
+          "404": { "description": "No encontrada" }
+        }
+      },
+
+      "put": {
+        "summary": "Actualizar serie",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Actualizada" }
+        }
+      },
+
+      "delete": {
+        "summary": "Eliminar serie",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Eliminada" }
+        }
+      }
+    }
+  }
+}

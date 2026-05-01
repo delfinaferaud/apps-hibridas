@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "5333b879-83e6-4ded-9d81-39938fc371d5",
+		"name": "Series",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15301005"
+	},
+	"item": [
+		{
+			"name": "Get all",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"genre\": \"Crimen\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/api/shows",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"api",
+						"shows"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create show",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"pruebaa\",\r\n  \"description\": \"adsad\",\r\n  \"link\": \"https://www.imdb.com/es/title/tt0452046/\",\r\n  \"img\": \"https://picsum.photos/400/225\",\r\n  \"genre\": \"Crimen\",\r\n  \"seasons\": 1,\r\n  \"section\": \"crimen\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/api/shows",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"api",
+						"shows"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3333/api/shows/69f516f52adb60590552a1a2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"api",
+						"shows",
+						"69f516f52adb60590552a1a2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n        \"description\": \"Un profesor de química se convierte en narcotraficante.\",\r\n        \"genre\": \"Crimen\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3333/api/shows/69f43e72ad4b764b2c276a76",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"api",
+						"shows",
+						"69f43e72ad4b764b2c276a76"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
